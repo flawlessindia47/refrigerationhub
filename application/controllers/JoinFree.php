@@ -45,7 +45,7 @@ class JoinFree extends CI_Controller
             if (!empty($this->input->post('txtRegUserType'))) {
                 $ReguserType = $this->input->post('txtRegUserType');
             } else {
-                $ReguserType = 1; // Guest User
+                $ReguserType = 1; // Seller 
             }
             $email = $this->input->post('txtMail');
             $select = "reguser_mail";
@@ -68,10 +68,11 @@ class JoinFree extends CI_Controller
             $browser = $this->agent->agent_string();
             $AutoPass = date('Ymdhis');
             $opt = (mt_rand(100000, 999999));
-            $resPass = autouser - $AutoPass;
+            $resPass = "autouser- $AutoPass";
+            $passwordGene= password_hash($resPass, PASSWORD_DEFAULT);
             $data = array(
                 'reguser_mail' => $email,
-                'resuser_password' => password_hash($resPass, PASSWORD_DEFAULT),
+                'resuser_password' =>$passwordGene,
                 'reguser_type' => $ReguserType,
                 'delStatus' => 'no',
                 'status' => 'Active',
@@ -103,8 +104,38 @@ class JoinFree extends CI_Controller
                     'created_at' => date('Y-m-d H:i:s')
 
                 );
-                $tableName = "tbl_userregistrationdetail";
+                
+                /****Mail*************/
+    			$message  = 'Hi '.$name."\n\n";
+    			$message .= "Your OPT:     ".$opt."\n";
+    			$message .= "Password is :    ".$resPass."\n";
+    			$message .= "User Name:  autouser-".$returnId."\n\n";
+    			$message .= 'You are sending registration request to us our admin theam shortlly contact you'."\n\n\n";
+    			$message .= 'Thanks'."\n";
+    			$message .= 'Refrigrationhum.com.'."\n";
+    			
+    	
+                $config = Array(
+            'protocol' => 'smtp',
+            'smtp_host' => SMTP_HOST,
+            'smtp_port' => SMTP_PORT,
+            'smtp_user' => SMTP_USER,
+            'smtp_pass' => SMTP_PASS,
+            'mailtype'  => 'html',
+            'charset'   => 'iso-8859-1'
+        );
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+        $this->email->initialize($config);
+        $this->email->from(SMTP_EMAIL, SMTP_NAME);
+        $this->email->to('ajaykan47@gmail.com');
+        $this->email->subject('Email Test');
+        $this->email->message($message);
+
+                  $result = $this->email->send();
+                 $tableName = "tbl_userregistrationdetail";
                 $this->Setting_model->insertData($tableName, $dataArray);
+               // $this->Joinfree_model->sendEmail($email, $id);
                 $this->session->set_flashdata('done', 'A confirmation link  code has been sent to ' . $email . ' Please Login and Click Activation Link!');
                 redirect("JoinFree/confirmationOtp");
             } else {
@@ -231,7 +262,7 @@ class JoinFree extends CI_Controller
     public function uploadProduct()
     {
 
-        if (!($this->session->userdata('Regdetails'))) {
+         if (!($this->session->userdata('Regdetails'))) {
             redirect(base_url());
         }
         $data['title'] = "Refrigeration Hub";
@@ -772,6 +803,20 @@ class JoinFree extends CI_Controller
 
     }
     /*******Upload Product**********end here*****/
+    
+    
+   public function varify_user() {
+
+        $email = $this->input->get('email');
+        $varify_code = $this->input->get('varify_code');
+        $varfyRes = $this->register_model->varifyUser($email, $varify_code);
+        if ($varfyRes) {
+            redirect('JoinFree');
+        } else {
+
+            redirect('JoinFree');
+        }
+    }
 
 
 }

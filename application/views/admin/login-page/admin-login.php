@@ -134,7 +134,7 @@
             <p class="disMes alert-warning">Please Check Your User Name,Password and Role Type Or Contact To
                 Administrator</p>
         <?php } ?>
-        <form action="<?php echo base_url(); ?>Admin/Auth/adminLogin" method="post">
+        <form action="<?php echo base_url(); ?>admin/Auth/adminLogin" method="post">
             <div class="log"><input type="email" value="" name="inputEmail" placeholder=" username"></div>
             <div class="log1"><input type="password" value="" name="inputPass" placeholder=" password"></div>
            <!-- <input type="hidden" value="1" name="ddlLoginType">-->

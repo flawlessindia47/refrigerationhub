@@ -102,6 +102,8 @@ class Setting_model extends CI_Model
     }
 
 
+    /**********manage product********************/
+
     public function showtList($tableName)
     {
         $this->db->select('*')
@@ -111,5 +113,32 @@ class Setting_model extends CI_Model
         return $query->result();
     }
 
+   
+
+    public function getProductList()
+    {
+        $this->db->select('*')
+            ->from('tbl_product as pro')
+            ->join('tbl_productspecification as specific', 'specific.product_id=pro.product_id', 'left')
+            ->join('tbl_tradeinformation as tra', 'tra.ps_id=specific.ps_id', 'left')
+            ->join('tbl_category as cat', 'cat.cat_id=pro.cat_id', 'left')
+            ->join('tbl_subcategory as subcat', 'subcat.subcat_id=pro.subcat_id', 'left');
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+     /**********manage product*****End***************/
+     public function gePostbyRequirementLead()
+    {
+
+        $this->db->select('*')
+            ->from('tbl_postbyrequirement')
+            ->order_by("pbr_id", "DESC");
+            $query = $this->db->get();
+        return $query->result();
+
+    }
+    
+    
 
 }

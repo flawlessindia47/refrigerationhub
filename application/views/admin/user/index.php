@@ -1,14 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+error_reporting(0);
 /**
  * Created by $ajaykan47.
  * User: Flawlessindia
  * Date: 24-05-2018
  * Time: 01:02 PM
  */
-
+//print_r($editResult); die;
 $data['value'] = $this->session->userdata('logindetails');
 $user_type = $data['value']['user_type'];
+$access = "";
+$peionSet = "";
+if ($peionSet != NULL) {
+    $access = explode(',', $peionSet);
+
+}
 ?>
 <?php
 $id = "";
@@ -27,6 +34,8 @@ if (!empty($editResult)) {
         $mobile = $value->mobile;
         $password = $value->password;
         $status = $value->status;
+        $user_type = $value->user_type;
+        $peionSet = $value->privilege;
     }
 }
 
@@ -135,12 +144,22 @@ if (!empty($editResult[0]->id)) {
                                         <select name="txtUserType" class="form-control" required="">
                                             <option value="">--Select Type--</option>
                                             <?php
-                                            if($user_type==1){?>
-                                            <option value="1" <?php if ($status == 1) { echo 'selected'; } ?>>Administration</option>
+                                            if ($user_type == 1) {
+                                                ?>
+                                                <option value="1" <?php if ($user_type == 1) {
+                                                    echo 'selected';
+                                                } ?>>Administration
+                                                </option>
                                             <?php }
                                             ?>
-                                            <option value="2" <?php if ($status == 2) { echo 'selected'; } ?>>Admin</option>
-                                            <option value="3" <?php if ($status == 3) { echo 'selected'; } ?>>Sub-Admin</option>
+                                            <option value="2" <?php if ($user_type == 2) {
+                                                echo 'selected';
+                                            } ?>>Admin
+                                            </option>
+                                            <option value="3" <?php if ($user_type == 3) {
+                                                echo 'selected';
+                                            } ?>>Sub-Admin
+                                            </option>
 
                                         </select>
 
@@ -166,19 +185,109 @@ if (!empty($editResult[0]->id)) {
 
                                 </div>
                             </div>
+
+
                             <div class="form-group">
                                 <label>Privilege</label>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type='checkbox' name='txtPrivilege[]' value='1'>Manage Lead
-                                        <input type='checkbox' name='txtPrivilege[]' value='2'>Manage User
-                                        <input type='checkbox' name='txtPrivilege[]' value='3'>Manage Product
-                                        <input type='checkbox' name='txtPrivilege[]' value='4'>Manage Country
-                                        <input type='checkbox' name='txtPrivilege[]' value='5'>Manage Mode Of Payment
-                                        <input type='checkbox' name='txtPrivilege[]' value='6'>Manage Frequency
-                                        <input type='checkbox' name='txtPrivilege[]' value='7'>Manage Ownership Type
-                                        <input type='checkbox' name='txtPrivilege[]' value='8'>Manage Seller
-                                        <input type='checkbox' name='txtPrivilege[]' value='9'>Manage Buyer
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='1' <?php if (in_array(1, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Lead
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='2' <?php if (in_array(2, $access)) {
+                                            echo "checked";
+                                        } ?>> Manage User
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='3' <?php if (in_array(3, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Product
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='4' <?php if (in_array(4, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Country
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='5' <?php if (in_array(5, $access)) {
+                                            echo "checked";
+                                        } ?>>Mode Of Payment
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='6' <?php if (in_array(6, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Frequency
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='7' <?php if (in_array(7, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Ownership Type
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='8' <?php if (in_array(8, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Seller
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='9' <?php if (in_array(9, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Buyer
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='10' <?php if (in_array(10, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Quantity Unit
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='11' <?php if (in_array(11, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Measure Unit
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='12' <?php if (in_array(12, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Material
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='13' <?php if (in_array(13, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Capacity
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='14' <?php if (in_array(14, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Power Source
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='15' <?php if (in_array(15, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Mounting
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='16' <?php if (in_array(16, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Primary Business
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='17' <?php if (in_array(17, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Master keyword
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='18' <?php if (in_array(18, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Category
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='19' <?php if (in_array(19, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Sub-Category
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='20' <?php if (in_array(20, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Product
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='21' <?php if (in_array(21, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Frequency
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='22' <?php if (in_array(22, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Power Unit
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='23' <?php if (in_array(23, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Primary Business
+                                        <input type='checkbox' name='txtPrivilege[]'
+                                               value='24' <?php if (in_array(24, $access)) {
+                                            echo "checked";
+                                        } ?>>Manage Extra Setting
+                                        <!--  <input type='checkbox' name='txtPrivilege[]' value='21' <?php /*if (in_array(25, $access)){ echo "checked"; }*/ ?>>Manage All-->
                                     </div>
                                 </div>
                             </div>

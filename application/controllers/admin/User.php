@@ -109,6 +109,7 @@ class User extends CI_Controller
 
     public function updateUser()
     {
+
         $idH = $this->input->post('hidden_id');
         $name = $this->input->post('txtName');
         $email = $this->input->post('txtMail');

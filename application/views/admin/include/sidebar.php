@@ -197,400 +197,363 @@ if ($privilege != NULL) {
                         </ul>
                     </li>
 
-                    <?php if (in_array(1, $access)) { ?>
+                    <?php if (in_array(7, $access)) { ?>
+                        <!-----------------Manage Type------------------->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-tree"></i>
+                                <i class="nav-icon fa fa-pie-chart"></i>
                                 <p>
-                                    Lead
+                                    Ownership Type
                                     <i class="fa fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url() ?>admin/Lead" class="nav-link">
+                                    <a href="<?php echo base_url(); ?>admin/OwnershipType" class="nav-link">
                                         <i class="fa fa-circle-o nav-icon"></i>
-                                        <p>General Lead</p>
+                                        <p>Add Ownership Type </p>
+                                    </a>
+                                    <!--<a href="<?php /*echo base_url(); */ ?>admin/Country/listCountry" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>List Ownership Type</p>
+                                </a>-->
+                                </li>
+                            </ul>
+                        </li>
+                    <?php } ?>
+                    <!-------OwnerShip Type----end-------->
+                    <?php if (in_array(10, $access)) { ?>
+                        <!-------Quanity Unit-------->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Quantity Unit
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/QuantityUnit" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Quantity Unit</p>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <!-------Quanity Unit-------->
+                    <?php } ?>
+                    <?php if (in_array(5, $access)) { ?>
+                        <!------Mode of Payment------>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-edit"></i>
+                                <p>
+                                    Mode of Payment
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/ModePayment" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Mode of Payment </p>
+                                    </a>
+                                    <!--<a href="<?php /*echo base_url(); */ ?>admin/Country/listCountry" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>List Mode of Payment</p>
+                                </a>-->
+                                </li>
+                            </ul>
+                        </li>
+                        <!------Mode of Payment------>
+                    <?php } ?>
+                    <?php if (in_array(21, $access)) { ?>
+                        <!-----------------Manage Frequency------------------------>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Frequency
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Frequency" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Frequency </p>
+                                    </a>
+                                    <!--<a href="<?php echo base_url(); ?>admin/Country/listCountry" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>List Frequency</p>
+                                </a>-->
+                                </li>
+                            </ul>
+                        </li>
+                    <?php } ?>
+                    <!-------Material -------->
+                    <?php if (in_array(11, $access)) { ?>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Unit Measures
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/measureunit" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Unit of Measures</p>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/listmeasureunit" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Unit of Measures</p>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </li>
+                    <?php } ?>
+                    <!-------Material-------->
+                    <?php if (in_array(12, $access)) { ?>
+                        <!-------Material -------->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Material
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Material</p>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/listMaterial" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Material</p>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <!-------Material-------->
+                    <?php } ?>
+                    <?php if (in_array(14, $access)) { ?>
+                        <!-------Capacity -------->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Capacity
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/capacity" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Capacity</p>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/listcapacity" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Capacity</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-------Capacity---End Here-------->
+                    <?php } ?>
+                    <?php if (in_array(22, $access)) { ?>
+                        <!-------Power Source -------->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Power Source
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/powersource" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Power Source</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/icons.html" class="nav-link">
+                                    <a href="<?php echo base_url(); ?>admin/Material/listpsource" class="nav-link">
                                         <i class="fa fa-circle-o nav-icon"></i>
-                                        <p>Lead List</p>
+                                        <p>List Power Source</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-------Power Source---End Here-------->
+                    <?php } ?>
+                    <?php if (in_array(22, $access)) { ?>
+                        <!-------Power Unit -------->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Power Unit
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/powerunit" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Power Unit</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/listpowerunit" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Power Unit</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-------Power Unit---End Here-------->
+                    <?php } ?>
+                    <?php if (in_array(15, $access)) { ?>
+                        <!-------Mounting-------->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Mounting
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/mounting" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Mounting</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Material/listmounting" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Mounting</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-------Mounting End here-------->
+                    <?php } ?>
+                    <?php if (in_array(23, $access)) { ?>
+                        <!-----------------Manage Primary Bussiness------------------------>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Primary Business
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/PrimaryBussinessType" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Primary Business </p>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-----------------Manage Primary Business end Here------------------->
+                    <?php } ?>
+                    <?php if (in_array(23, $access)) { ?>
+                        <!-----------------Master  Bushiness Keyword------------------------>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-pie-chart"></i>
+                                <p>
+                                    Master Keyword
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/MasterKeyword" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Keyword</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-----------------Master  Bushiness Keyword ------End Here ------------->
+                    <?php } ?>
+
+                    <?php if (in_array(4, $access)) { ?>
+                        <!----------Manage Country-------------------------->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-edit"></i>
+                                <p>
+                                    Country
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Country" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Country </p>
+                                    </a>
+                                    <a href="<?php echo base_url(); ?>admin/Country/listCountry" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Country </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Country/State" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add State</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Country/listState" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List State</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Country/City" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add City </p>
+                                    </a>
+                                    <a href="<?php echo base_url(); ?>admin/Country/listCity" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List City </p>
                                     </a>
                                 </li>
 
                             </ul>
                         </li>
+                        <!--/*************Country End Here**************/-->
                     <?php } ?>
-
-                    <!-----------------Manage Type------------------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Ownership Type
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/OwnershipType" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Ownership Type </p>
-                                </a>
-                                <!--<a href="<?php /*echo base_url(); */ ?>admin/Country/listCountry" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Ownership Type</p>
-                                </a>-->
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------OwnerShip Type----end-------->
-                    <!-------Quanity Unit-------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                               Quantity Unit
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/QuantityUnit" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Quantity Unit</p>
-                                </a>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Quanity Unit-------->
-
-
-
-                    <!------Mode of Payment------>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-edit"></i>
-                            <p>
-                                Mode of Payment
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/ModePayment" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Mode of Payment </p>
-                                </a>
-                                <!--<a href="<?php /*echo base_url(); */ ?>admin/Country/listCountry" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Mode of Payment</p>
-                                </a>-->
-                            </li>
-                        </ul>
-                    </li>
-                    <!------Mode of Payment------>
-
-                    <!-----------------Manage Frequency------------------------>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Frequency
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Frequency" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Frequency </p>
-                                </a>
-                                <!--<a href="<?php echo base_url(); ?>admin/Country/listCountry" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Frequency</p>
-                                </a>-->
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Material -------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Unit Measures
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/measureunit" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Unit of Measures</p>
-                                </a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/listmeasureunit" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Unit of Measures</p>
-                                </a>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Material-------->
-
-                    <!-------Material -------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Material
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Material</p>
-                                </a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/listMaterial" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Material</p>
-                                </a>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Material-------->
-
-                    <!-------Capacity -------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Capacity
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/capacity" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Capacity</p>
-                                </a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/listcapacity" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Capacity</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Capacity---End Here-------->
-
-                    <!-------Power Source -------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Power Source
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/powersource" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Power Source</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/listpsource" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Power Source</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Power Source---End Here-------->
-
-                    <!-------Power Unit -------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Power Unit
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/powerunit" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Power Unit</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/listpowerunit" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Power Unit</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Power Unit---End Here-------->
-                    <!-------Mounting-------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Mounting
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/mounting" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Mounting</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Material/listmounting" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Mounting</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Mounting End here-------->
-
-
-
-
-                    <!-----------------Manage Primary Bussiness------------------------>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                                Primary Business
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/PrimaryBussinessType" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Primary Business </p>
-                                </a>
-
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-----------------Manage Primary Business end Here------------------->
-
-                    <!-----------------Master  Bushiness Keyword------------------------>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
-                            <p>
-                              Master Keyword
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/MasterKeyword" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add  Keyword</p>
-                                </a>
-
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-----------------Master  Bushiness Keyword ------End Here ------------->
-
-                    <!-----------------Manage Seller------------------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-circle-o text-danger"></i>
-                            <p>
-                                Buyer/Seller
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Buyer/BuyerList" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Buyer </p>
-                                </a>
-                                <a href="<?php echo base_url(); ?>admin/Seller/listSeller" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Seller </p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!----------Manage Country-------------------------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-edit"></i>
-                            <p>
-                                Country
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Country" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Country </p>
-                                </a>
-                                <a href="<?php echo base_url(); ?>admin/Country/listCountry" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Country </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Country/State" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add State</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Country/listState" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List State</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Country/City" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add City </p>
-                                </a>
-                                <a href="<?php echo base_url(); ?>admin/Country/listCity" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List City </p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <!--/*************Country End Here**************/-->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-table"></i>
@@ -614,124 +577,199 @@ if ($privilege != NULL) {
                             </li>
                         </ul>
                     </li>
+
+
+                    <!------------------- Lead Section--------------------->
+                    <!------------------- Lead Section--------------------->
+                    <!------------------- Product Section Start Here--------------------->
+                    <li class="nav-header">Lead Information</li>
+                    <?php if (in_array(18, $access)) { ?>
+                        <?php if (in_array(1, $access)) { ?>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fa fa-tree"></i>
+                                    <p>
+                                        Lead
+                                        <i class="fa fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="<?php echo base_url() ?>admin/Manage/lead" class="nav-link">
+                                            <i class="fa fa-circle-o nav-icon"></i>
+                                            <p>General Lead</p>
+                                        </a>
+                                    </li>
+                                    <!--<li class="nav-item">
+                                        <a href="pages/UI/icons.html" class="nav-link">
+                                            <i class="fa fa-circle-o nav-icon"></i>
+                                            <p>Lead List</p>
+                                        </a>
+                                    </li>-->
+
+                                </ul>
+                            </li>
+                        <?php } ?>
+
+                        <!----------------- Buyer/Seller------------------->
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-circle-o text-danger"></i>
+                                <p>
+                                    Buyer/Seller
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <?php if (in_array(8, $access)) { ?>
+                                        <a href="<?php echo base_url(); ?>admin/Buyer/BuyerList" class="nav-link">
+                                            <i class="fa fa-circle-o nav-icon"></i>
+                                            <p>List Buyer </p>
+                                        </a>
+                                    <?php } ?><?php if (in_array(8, $access)) { ?>
+                                        <a href="<?php echo base_url(); ?>admin/Seller/listSeller" class="nav-link">
+                                            <i class="fa fa-circle-o nav-icon"></i>
+                                            <p>List Seller </p>
+                                        </a>
+                                    <?php } ?>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <!------------------- Buyer/Seller-------------------->
+                    <?php } ?> <!------------------- Lead Section--------------------->
+
+                    <!------------------- Lead Section--------------------->
+
                     <!------------------- Product Section Start Here--------------------->
                     <li class="nav-header">Product Information</li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-envelope-o"></i>
-                            <p>
-                                Category
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Category" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Category</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Category/listCategory" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Category</p>
-                                </a>
-                            </li>
+                    <?php if (in_array(18, $access)) { ?>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-envelope-o"></i>
+                                <p>
+                                    Category
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Category" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Category</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Category/listCategory" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Category</p>
+                                    </a>
+                                </li>
 
 
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-envelope-o"></i>
-                            <p>
-                                Sub-Category
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/SubCategory" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Sub-Category</p>
-                                </a>
-                            </li>
+                            </ul>
+                        </li>
+                    <?php } ?>
+                    <?php if (in_array(19, $access)) { ?>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-envelope-o"></i>
+                                <p>
+                                    Sub-Category
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/SubCategory" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Sub-Category</p>
+                                    </a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/SubCategory/listSubCategory" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Sub-Category</p>
-                                </a>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/SubCategory/listSubCategory"
+                                       class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Sub-Category</p>
+                                    </a>
+                                </li>
 
 
-                        </ul>
-                    </li>
+                            </ul>
+                        </li>
+                    <?php } ?>
                     <!--  /******************************/-->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-book"></i>
-                            <p>
-                                Product
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Product" class="nav-link">
+                    <?php if (in_array(20, $access)) { ?>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-book"></i>
+                                <p>
+                                    Manage Product
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <!--<li class="nav-item">
+                                <a href="<?php /*echo base_url(); */ ?>admin/Product" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>Add Product</p>
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Product/listProduct" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Product</p>
-                                </a>
-                            </li>
+                            </li>-->
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Manage/product" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Product</p>
+                                    </a>
+                                </li>
 
-                        </ul>
-                    </li>
-                    <!------------------- Product Section End Here--------------------->
+                            </ul>
+                        </li>
+                        <!------------------- Product Section End Here--------------------->
+                    <?php } ?>
                     <!-------Setting Controller--------->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus-square-o"></i>
-                            <p>
-                                Extras Setting
-                                <i class="fa fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo base_url();?>admin/Setting/Banner" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Banner</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url();?>admin/Setting/listBanner" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List Banner</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo base_url();?>admin/Setting" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Change Logo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="starter.html" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Starter Page</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-------Setting Controller--------->
+                    <?php if (in_array(24, $access)) { ?>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-plus-square-o"></i>
+                                <p>
+                                    Extras Setting
+                                    <i class="fa fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Setting/Banner" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Add Banner</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Setting/listBanner" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>List Banner</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>admin/Setting" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Change Logo</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="starter.html" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>Starter Page</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-------Setting Controller--------->
 
-
+                    <?php } ?>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-plus-square-o"></i>
@@ -769,8 +807,8 @@ if ($privilege != NULL) {
                     </li>
                     <li class="nav-header">Setting</li>
                     <li class="nav-item">
-                       <!-- <a href="https://adminlte.io/docs" class="nav-link">-->
-                       <a href="<?php echo base_url(); ?>Setting" class="nav-link">
+                        <!-- <a href="https://adminlte.io/docs" class="nav-link">-->
+                        <a href="<?php echo base_url(); ?>Setting" class="nav-link">
                             <i class="nav-icon fa fa-file"></i>
                             <p></p>
                         </a>

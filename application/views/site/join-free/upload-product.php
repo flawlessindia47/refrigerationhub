@@ -668,7 +668,6 @@
                     </div>
                     <!------Type Of Compressor--->
 
-
                     <!--Trade Information-->
                     <div class="form-group">
                         <h2>3. Trade Information</h2>

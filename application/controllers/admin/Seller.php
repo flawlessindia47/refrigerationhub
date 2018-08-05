@@ -16,6 +16,7 @@ class Seller extends CI_Controller
             redirect('admin/Auth');
         }
         $this->load->model('Setting_model');
+        $this->load->model('Category_model');
     }
 
     public function index()
@@ -37,14 +38,14 @@ class Seller extends CI_Controller
 
     public function listSeller()
     {
-        echo 'seller list';
+        //echo 'seller list';
         $data['title'] = 'List Banner';
         $this->load->view('admin/include/header', $data);
         $this->load->view('admin/include/sidebar');
-        $tableName = "tbl_seller";
+        $tableName = "tbl_userregistration";
         $Wherecondition = array('delStatus' => 'no');
         $data['list'] = $this->Category_model->getListByUserType($tableName, $Wherecondition);
-        $this->load->view('admin/seller/listSeller', $data);
+        $this->load->view('admin/seller/list', $data);
     }
 
 

@@ -83,3 +83,21 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+
+// Custom definitions
+define('TOGGLE_CLOSE_CLASS', 'hide-on-load');
+define('SITE_NAME', 'Refrigrationhub');
+
+define('ADMIN_EMAIL', 'reply@refrigerationhub.com');
+define('INFO_EMAIL', 'info@refrigerationhub.com');
+define('CONTACT_EMAIL', 'hello@refrigerationhub.com');
+define('SUBSCRIBE_EMAIL', 'hello@refrigerationhub.com');
+
+define('SMTP_NAME', 'Refrigration Hub');
+define('SMTP_EMAIL', 'reply@refrigerationhub.com');
+define('SMTP_HOST', 'mail.refrigerationhub.com');
+define('SMTP_PORT', 587);
+define('SMTP_USER', 'reply@refrigerationhub.com');
+define('SMTP_PASS', '8Z;G}DAkBvg+');

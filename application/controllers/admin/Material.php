@@ -936,7 +936,7 @@ class Material extends CI_Controller
         $this->load->view('admin/include/header', $data);
         $this->load->view('admin/include/sidebar');
         $tableName = "mast_tbl_mounting";
-        $DbKey = "punit_id";
+        $DbKey = "mou_id";
         $data['editResult'] = $this->Setting_model->getListById($idG, $DbKey, $tableName);
         $this->load->view('admin/material/mounting', $data);
         $this->load->view('admin/include/footer');
@@ -954,7 +954,7 @@ class Material extends CI_Controller
                 $data['title'] = 'Add Mounting';
                 $this->load->view('admin/include/header', $data);
                 $this->load->view('admin/include/sidebar');
-                $this->load->view('admin/material/power-unit', $data);
+                $this->load->view('admin/material/mounting', $data);
                 $this->load->view('admin/include/footer');
             } else {
 
@@ -973,7 +973,7 @@ class Material extends CI_Controller
                 $user_type = $data['value']['user_type'];
 
                 $dataArr = array(
-                    'punit_name' => $unit,
+                    'mou_name' => $unit,
                     'created_at' => date('Y-m-d H:i:s'),
                     'status' => $txtStatus,
                     'created_by' => $user_type,
@@ -985,30 +985,30 @@ class Material extends CI_Controller
 
                 if (!empty($lastInsertId && ($lastInsertId > 0))) {
 
-                    $this->session->set_flashdata('done', '<strong style="color: #807E1B;">  ' . $unit . '</strong> is  Successfully Saved...!');
-                    redirect("admin/Material/powerunit");
+                    $this->session->set_flashdata('done', '<strong style="color: #807E1B;">  ' . $unit . '</strong> Unit is  Successfully Saved...!');
+                    redirect("admin/Material/mounting");
                 } else {
 
                     $this->session->set_flashdata('error', 'Your data not saved Please Try Again...!');
-                    redirect("admin/Material/powerunit");
+                    redirect("admin/Material/mounting");
                 }
             }
         } else {
             $this->session->set_flashdata('error', 'You are not a Human  Please try Again...!');
-            redirect("admin/Material/powerunit");
+            redirect("admin/Material/mounting");
         }
 
     }
 
     public function listmounting()
     {
-        $data['title'] = 'List Power Unit';
+        $data['title'] = 'List Mounting Unit';
         $this->load->view('admin/include/header', $data);
         $this->load->view('admin/include/sidebar');
         $tableName = 'mast_tbl_mounting';
         $Wherecondition = array('delStatus' => 'no');
         $data['list'] = $this->Category_model->getListByUserType($tableName, $Wherecondition);
-        $this->load->view('admin/material/power-unit-list', $data);
+        $this->load->view('admin/material/mounting-unit-list', $data);
 
     }
 
@@ -1031,7 +1031,7 @@ class Material extends CI_Controller
         $data['value'] = $this->session->userdata('logindetails');
         $user_type = $data['value']['user_type'];
         $dataArr = array(
-            'punit_name' => $unit,
+            'mou_name' => $unit,
             'updated_at' => date('Y-m-d H:i:s'),
             'status' => $txtStatus,
             'created_by' => $user_type,
@@ -1043,11 +1043,11 @@ class Material extends CI_Controller
 
         if (!empty($updatedId && ($updatedId > 0))) {
             $this->session->set_flashdata('done', 'Your record successfully change...!');
-            redirect("admin/Material/listpowerunit");
+            redirect("admin/Material/listmounting");
         } else {
 
             $this->session->set_flashdata('error', 'Your data not saved Please Try Again...!');
-            redirect("admin/Material/listpowerunit");
+            redirect("admin/Material/listmounting");
         }
     }
 
@@ -1063,10 +1063,10 @@ class Material extends CI_Controller
         if ($this->Setting_model->updateRecord($DbKey, $idH, $tableName, $data)) {
 
             $this->session->set_flashdata('done', 'Power Unit Restore Successfully ...!!');
-            redirect("admin/Material/listpowerunit");
+            redirect("admin/Material/listmounting");
         } else {
             $this->session->set_flashdata('error', 'Power Unit is not successfully Restore...!!');
-            redirect("admin/Material/listpowerunit");
+            redirect("admin/Material/listmounting");
         }
     }
 
@@ -1085,28 +1085,25 @@ class Material extends CI_Controller
             if ($this->Setting_model->updateRecord($DbKey, $idH, $tableName, $data)) {
 
                 $this->session->set_flashdata('done', 'Power Unit Info Delete Successfully ...!!');
-                redirect("admin/Material/listpowerunit");
+                redirect("admin/Material/listmounting");
             } else {
                 $this->session->set_flashdata('error', 'Power Unit is not successfully deleted...!!');
-                redirect("admin/Material/listpowerunit");
+                redirect("admin/Material/listmounting");
             }
         } else {
             $tableName = "mast_tbl_mounting";
             $DbKey = "mou_id";
             if ($this->Setting_model->deleteRecord($DbKey, $idH, $tableName)) {
-
                 $this->session->set_flashdata('done', 'Power Unit Info Delete Successfully ...!!');
-                redirect("admin/Material/listpowerunit");
+                redirect("admin/Material/listmounting");
             } else {
                 $this->session->set_flashdata('error', 'Power Unit is not successfully deleted...!!');
-                redirect("admin/Material/listpowerunit");
+                redirect("admin/Material/listmounting");
             }
         }
 
     }
     /**********mountingt***End Here********/
-
-
 
 
 }

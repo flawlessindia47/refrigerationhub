@@ -2,19 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Created by $ajaykan47.
- * User: Flawlessindia
+ * User: Flawless India
  * Date: 24-05-2018
  * Time: 01:02 PM
  */
 ?>
 <?php
 $buttoName = '';
-if (!empty($editResult[0]->punit_id)) {
-    $frmaction = base_url() . "admin/Material/updatepowerunit";
+if (!empty($editResult[0]->mou_id)) {
+    $frmaction = base_url() . "admin/Material/updatemounting";
     $buttoName = 'Save Changes';
     $BtnClass = 'btn btn-raised btn-warning';
 } else {
-    $frmaction = base_url() . "admin/Material/addpowerunit";
+    $frmaction = base_url() . "admin/Material/addmounting";
     $buttoName = 'Add';
     $BtnClass = 'btn btn-raised btn-primary';
 }
@@ -37,16 +37,16 @@ if (!empty($editResult[0]->punit_id)) {
                     <?php } ?>
                     <div class="card-header">
 
-                        <h3 class="card-title">Add Power Unit</h3>
+                        <h3 class="card-title">Add Mounting Unit</h3>
                     </div>
                     <div class="card-body">
                         <form class="form form-horizontal" method="POST" enctype="multipart/form-data"
                               action="<?php echo $frmaction; ?>">
                             <div class="form-group">
-                                <label>Power Unit </label>
+                                <label>Add Mounting</label>
                                 <input type="text" name="txtSource" class="form-control" required=""
                                        value="<?php if (!empty($editResult)) {
-                                           echo $editResult[0]->punit_name;
+                                           echo $editResult[0]->mou_name;
                                        } else {
                                            echo set_value('txtSource');
                                        } ?>">
@@ -54,7 +54,7 @@ if (!empty($editResult[0]->punit_id)) {
                             <!-----Hidden Value----->
                             <input type="hidden" name="hidden_id" class="form-control"
                                    value="<?php if (!empty($editResult)) {
-                                       echo $editResult[0]->punit_id;
+                                       echo $editResult[0]->mou_id;
                                    } ?>">
                             <!-----Hidden Value----->
                             <div class="form-group">

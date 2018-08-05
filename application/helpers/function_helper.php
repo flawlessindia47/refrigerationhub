@@ -14,6 +14,43 @@ function createUrl($string)
     return strtolower(trim($string, '-'));
 }
 
+function sendmail($data) {
+    require_once(FCPATH . 'front_assets/phpmailer/class-phpmailer.php');
+//	require_once(FCPATH.'front_assets/phpmailer/class.phpmailer.php');
+//	require_once(FCPATH.'front_assets/phpmailer/class.smtp.php');
+	$mail = new PHPMailer();
+	debug($mail);
+
+	$mail->IsSMTP();
+	$mail->SMTPAuth = true;
+	$mail->Username = SMTP_USER;
+	$mail->Password = SMTP_PASS;
+	$mail->SMTPSecure = 'STARTTLS';
+	$mail->SMTPAutoTLS = true;
+	$mail->Host = SMTP_HOST;
+	$mail->Port = SMTP_PORT;
+
+	$from_email = isset($data['from'])?$data['from']:SMTP_EMAIL;
+	$from_name = isset($data['from_name'])?$data['from_name']:SMTP_NAME;
+
+	$mail->SetFrom( $from_email, $from_name );
+	$mail->isHTML( true );
+	$mail->Subject = $data['subject'];
+	$mail->MsgHTML( $data['message'] );
+	$mail->AddAddress( $data['to'] );
+	$mail->SMTPDebug = 0;
+
+	/* Send mail and return result */
+	if ( ! $mail->Send() ) {
+		$errors = $mail->ErrorInfo;
+		return false;
+	} else {
+		$mail->ClearAddresses();
+		$mail->ClearAllRecipients();
+		return true;
+	}
+}
+
 
 
 

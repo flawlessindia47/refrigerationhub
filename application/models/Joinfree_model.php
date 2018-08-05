@@ -69,6 +69,36 @@ class Joinfree_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    
+   /****** public function sendEmail($to_email, $id) {
+        $varif_code = random_code();
+        $this->db->where('id', $id);
+        $this->db->update('users', array('varif_code' => $varif_code));
+        $update = $this->db->affected_rows();
+        if ($update) {
+            $data = array(
+                'to' => $to_email,
+                'subject' => '[Refrigrationhub] Please Confirm Your E-mail Address',
+                'message' => '
+                    <p>Hi !</p>
+                    <p>Welcome to Refrigrationhub. Having you as a part of this Business Community makes us proud!</br>
+                    You are receiving this e-mail because user at has given yours as an e-mail address to connect their account.
+                     </p>
+                     <p>To Confirm it was you:</p>
+                    <p><a href="' . base_url('JoinFree/varify_user?email=' . $to_email . '&varify_code=' . $varif_code) . '">Click here</a></p>
+                    <p>For any queries, mail us at ' . INFO_EMAIL . '.</p>
+                    <p>Thanks & Regards,<br>Team Refrigrationhub <br>
+                                        Mobile: +91 9811280302
+                                        </p>
+                '
+            );
+            sendmail($data);
+            return true;
+        } else {
+            return false;
+        }
+    }****/
+    
 
 
 }
