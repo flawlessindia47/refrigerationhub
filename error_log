@@ -1,0 +1,8 @@
+[03-Aug-2018 13:30:45 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/refrigerationhub/public_html/application/controllers/PostBuyRequirements.php on line 43
+[03-Aug-2018 13:30:47 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/refrigerationhub/public_html/application/controllers/PostBuyRequirements.php on line 43
+[03-Aug-2018 13:30:48 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/refrigerationhub/public_html/application/controllers/PostBuyRequirements.php on line 43
+[03-Aug-2018 13:30:48 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/refrigerationhub/public_html/application/controllers/PostBuyRequirements.php on line 43
+[03-Aug-2018 13:31:00 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/refrigerationhub/public_html/application/controllers/PostBuyRequirements.php on line 43
+[03-Aug-2018 13:31:31 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/refrigerationhub/public_html/application/controllers/PostBuyRequirements.php on line 43
+[03-Aug-2018 13:33:56 Etc/GMT] PHP Fatal error:  Can't use method return value in write context in /home/refrigerationhub/public_html/application/controllers/PostBuyRequirements.php on line 43
+[04-Aug-2018 09:50:52 Etc/GMT] PHP Fatal error:  Cannot redeclare Setting_model::showtList() in /home/refrigerationhub/public_html/application/models/Setting_model.php on line 116
