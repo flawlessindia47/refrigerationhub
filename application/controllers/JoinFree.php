@@ -113,7 +113,7 @@ class JoinFree extends CI_Controller
     			$message .= 'You are sending registration request to us our admin theam shortlly contact you'."\n\n\n";
     			$message .= 'Thanks'."\n";
     			$message .= 'Refrigrationhum.com.'."\n";
-    			
+
     	
                 $config = Array(
             'protocol' => 'smtp',
@@ -262,9 +262,9 @@ class JoinFree extends CI_Controller
     public function uploadProduct()
     {
 
-         if (!($this->session->userdata('Regdetails'))) {
+        /* if (!($this->session->userdata('Regdetails'))) {
             redirect(base_url());
-        }
+        }*/
         $data['title'] = "Refrigeration Hub";
         $data['author'] = "Refrigeration Hub";
         $data['description'] = "Refrigeration Hub";
@@ -288,7 +288,7 @@ class JoinFree extends CI_Controller
     {
 
         $this->form_validation->set_rules('txtMail', 'E-mail', 'trim|required');
-        $this->form_validation->set_rules('txtCategoryId', 'Number', 'trim|required');
+       /* $this->form_validation->set_rules('txtCategoryId', 'Number', 'trim|required');
         $this->form_validation->set_rules('txtSubcategoryId', 'Number', 'trim|required');
         $this->form_validation->set_rules('txtProductName', 'Company Name', 'trim|required');
         $this->form_validation->set_rules('txtProductCode', 'Pin Code', 'trim');
@@ -327,7 +327,7 @@ class JoinFree extends CI_Controller
         $this->form_validation->set_rules('txtSupplyAbility', 'Sample policy', 'trim');
         $this->form_validation->set_rules('txtDeliveryTime', 'Sample policy', 'trim');
         $this->form_validation->set_rules('txtSampleAvailable', 'Sample policy', 'trim');
-        $this->form_validation->set_rules('txtSamplepolicy', 'Sample policy', 'trim');
+        $this->form_validation->set_rules('txtSamplepolicy', 'Sample policy', 'trim');*/
         if ($this->form_validation->run() == false) {
             $this->session->set_flashdata('error', 'Please Filed Required (*) Filed...!');
 
@@ -422,24 +422,7 @@ class JoinFree extends CI_Controller
             } else {
                 $txtPriceUnit = "null";
             }
-            /**************product Images*********************/
-            $config['upload_path'] = './uploads/seller/productimage/';
-            $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size'] = 0;
-            //   $config['width'] = 258;
-            //   $config['height'] = 172;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload()) {
 
-                $error = array('error' => $this->upload->display_errors());
-                // $this->load->view('Admin/Category/addCategory', $error);
-
-            } else {
-
-            }
-            $upload_data = $this->upload->data();
-
-            /**************product Images*********************/
             /*****************Product Specification****Start**Here********************/
             if (!empty($this->input->post('txtProductType'))) {
                 $txtProductType = $this->input->post('txtProductType');
@@ -692,6 +675,26 @@ class JoinFree extends CI_Controller
             } else {
                 $reguser_ID = $reguser_id;
             }
+
+            /**************product Images*********************/
+            $config['upload_path'] = './uploads/seller/productimage/';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size'] = 0;
+            //   $config['width'] = 258;
+            //   $config['height'] = 172;
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload()) {
+                $error = array('error' => $this->upload->display_errors());
+                // $this->load->view('Admin/Category/addCategory', $error);
+
+            } else {
+
+            }
+
+            $upload_data = $this->upload->data();
+
+            /**************product Images*********************/
+
             $dataProduct = array(
                 'productImage' => $upload_data['file_name'],
                 'productImagePath' => $upload_data['full_path'],

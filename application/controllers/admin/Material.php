@@ -945,7 +945,6 @@ class Material extends CI_Controller
 
     public function addmounting()
     {
-
         if ($_POST['btnSubmit'] == "Add") {
             $this->form_validation->set_rules('txtSource', 'Unit   Name ', 'required|is_unique[mast_tbl_mounting.mou_name]');
             if (($this->form_validation->run() == FALSE)) {
